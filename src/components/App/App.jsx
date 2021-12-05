@@ -2,12 +2,14 @@ import React from 'react';
 
 import './App.scss';
 import Header from '../Header';
-import Filter from '../Filter';
+import Sidebar from '../Sidebar';
+import Main from '../Main';
 
 const App = () => (
   <div className="app">
     <Header />
-    <Filter />
+    <Sidebar />
+    <Main />
   </div>
 );
 
