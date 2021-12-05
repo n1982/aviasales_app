@@ -3,8 +3,8 @@ import React from 'react';
 import './Filter.scss';
 
 const Filter = () => (
-  <div className="filter-transfer">
-    <div className="filter-transfer__title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
+  <div className="filter-ticket">
+    <div className="filter-ticket__title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
     <div className="checkbox">
       <input type="checkbox" name="direct flight" />
       <label htmlFor="direct flight">Без пересадок</label>

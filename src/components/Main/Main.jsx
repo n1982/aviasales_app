@@ -1,8 +1,14 @@
 import React from 'react';
 
 import './Main.scss';
+import TicketList from '../TicketList';
+import SortingTab from '../SortingTab';
 
-// eslint-disable-next-line react/destructuring-assignment
-const Main = () => <div className="main"> Содержимое страницы. Здесь будет список билетов</div>;
+const Main = () => (
+  <div className="main">
+    <SortingTab />
+    <TicketList />
+  </div>
+);
 
 export default Main;

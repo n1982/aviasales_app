@@ -1,0 +1,33 @@
+.ticket{
+  display: grid;
+  gap: 10px;
+  background-color: white;
+  max-width: 500px;
+padding: 20px;
+}
+
+.ticket__price-logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  }
+
+.ticket__price{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  color: #2196F3;
+}
+
+.header__logo{
+  margin-left: auto;
+}
+
+.ticket__information{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gray-text {
+  color: #A0B0B9;
+}
