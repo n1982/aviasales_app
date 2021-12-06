@@ -1,0 +1,26 @@
+import React from 'react';
+
+import './Filter.scss';
+
+const Filter = () => (
+  <div className="filter-ticket">
+    <div className="filter-ticket__title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
+    <div className="checkbox">
+      <input type="checkbox" name="direct flight" />
+      <label htmlFor="direct flight">Без пересадок</label>
+    </div>
+    <div className="checkbox">
+      <input type="checkbox" name="direct flight" />
+      <label htmlFor="direct flight">1 пересадка</label>
+    </div>
+    <div className="checkbox">
+      <input type="checkbox" name="direct flight" />
+      <label htmlFor="direct flight">2 пересадки</label>
+    </div>
+    <div className="checkbox">
+      <input type="checkbox" name="direct flight" />
+      <label htmlFor="direct flight">3 пересадки</label>
+    </div>
+  </div>
+);
+export default Filter;

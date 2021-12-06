@@ -1,0 +1,10 @@
+@import "./src/utilites/variable";
+
+.ticket-list__button {
+  background-color: $blue-background;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  color: white;
+}
