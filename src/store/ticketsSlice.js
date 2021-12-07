@@ -425,15 +425,21 @@ const ticketsSlice = createSlice({
         ],
       },
     ],
+    numShowTicket: 5,
   },
   reducers: {
-    addTicket(store, action) {
-      console.log(store);
-      console.log(action.payload);
+    // eslint-disable-next-line no-unused-vars
+    addTicket(state, action) {
+      console.log(state);
+    },
+    // eslint-disable-next-line no-unused-vars
+    showMoreTicket(state) {
+      // eslint-disable-next-line no-param-reassign
+      state.numShowTicket += 5;
     },
   },
 });
 
-export const { addTicket } = ticketsSlice.actions;
+export const { addTicket, showMoreTicket } = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
