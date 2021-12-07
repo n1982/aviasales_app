@@ -6,7 +6,7 @@ import App from './components/App';
 
 import './normalize.css';
 import './index.scss';
-import './utilites/_variable.scss';
+import './_variable.scss';
 
 ReactDOM.render(
   <React.StrictMode>
