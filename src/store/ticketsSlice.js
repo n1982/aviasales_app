@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import getTotalFlyDuration from '../utilites/getTotlaFlyDuration';
+
 const ticketsSlice = createSlice({
   name: 'tickets',
   initialState: {
@@ -429,7 +431,8 @@ const ticketsSlice = createSlice({
   },
   reducers: {
     // eslint-disable-next-line no-unused-vars
-    addTicket(state, action) {
+    addTicket(state) {
+      // eslint-disable-next-line no-console
       console.log(state);
     },
     // eslint-disable-next-line no-unused-vars
@@ -437,9 +440,24 @@ const ticketsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.numShowTicket += 5;
     },
+
+    sortTicketByPrise(state) {
+      const filterTickets = [...state.tickets];
+      // eslint-disable-next-line no-param-reassign
+      state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
+    },
+
+    sortTicketByDuration(state) {
+      const filterTickets = [...state.tickets];
+
+      // eslint-disable-next-line no-param-reassign,array-callback-return,arrow-body-style
+      state.tickets = filterTickets.sort((previous, next) =>
+        getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
+      );
+    },
   },
 });
 
-export const { addTicket, showMoreTicket } = ticketsSlice.actions;
+export const { showMoreTicket, sortTicketByPrise, sortTicketByDuration } = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
