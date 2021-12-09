@@ -1,19 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Ticket from '../Ticket';
 
+import { showMoreTicket } from '../../store/ticketsSlice';
 import uniqueKey from '../../utilites/uniqueKey';
 import './TicketList.scss';
 
 const TicketList = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
+  const numShowTicket = useSelector((state) => state.tickets.numShowTicket);
+  const dispatch = useDispatch();
+
   return (
     <div className="ticket-list">
-      {tickets.map((ticket) => (
+      {tickets.slice(0, numShowTicket).map((ticket) => (
         <Ticket key={uniqueKey()} {...ticket} />
       ))}
-      <button type="button" className="ticket-list__button">
+      <button type="button" className="ticket-list__button" onClick={() => dispatch(showMoreTicket())}>
         ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
       </button>
     </div>

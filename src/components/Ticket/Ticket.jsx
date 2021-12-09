@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types,spaced-comment */
+/* eslint-disable react/prop-types,spaced-comment,arrow-body-style */
 import React from 'react';
+
 import enumeration from '../../utilites/enumeration';
 import { getArrivalTime, getDepartureTime, getTravelTime } from '../../utilites/dateUtility';
+
 import './Ticket.scss';
 
 const Ticket = ({ price, carrier, segments }) => {
-  console.log(segments);
   return (
     <div className="ticket">
       <div className="ticket__price-logo">
