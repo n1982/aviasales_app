@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import './SortingTab.scss';
 
-import { sortTicketByPrise, sortTicketByDuration } from '../../store/ticketsSlice';
+import { sortTicketByPrise, sortTicketByDuration, sortTicketOptimal } from '../../store/ticketsSlice';
 
 const SortingTab = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const SortingTab = () => {
       <div role="presentation" className="tabs-sorting__tab" onClick={() => dispatch(sortTicketByDuration())}>
         <span>САМЫЙ БЫСТРЫЙ</span>
       </div>
-      <div className="tabs-sorting__tab">
+      <div role="presentation" className="tabs-sorting__tab" onClick={() => dispatch(sortTicketOptimal())}>
         <span>ОПТИМАЛЬНЫЙ</span>
       </div>
     </div>

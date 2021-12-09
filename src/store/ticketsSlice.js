@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 import getTotalFlyDuration from '../utilites/getTotlaFlyDuration';
+// eslint-disable-next-line no-unused-vars
+import getMeanValueOfArray from '../utilites/getMeanValueOfArray';
 
 const ticketsSlice = createSlice({
   name: 'tickets',
@@ -440,24 +442,33 @@ const ticketsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.numShowTicket += 5;
     },
-
+    // todo переименовать на ...Price
     sortTicketByPrise(state) {
-      const filterTickets = [...state.tickets];
+      const filterTickets = current(state.tickets).slice();
       // eslint-disable-next-line no-param-reassign
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
+      // console.log(filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1)));
+      // eslint-disable-next-line no-param-reassign
+      // console.log(filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1)));
     },
 
     sortTicketByDuration(state) {
-      const filterTickets = [...state.tickets];
-
+      const filterTickets = current(state.tickets).slice();
       // eslint-disable-next-line no-param-reassign,array-callback-return,arrow-body-style
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
       );
     },
+    sortTicketOptimal(state) {
+      const filterTickets = current(state.tickets).slice();
+      // eslint-disable-next-line no-param-reassign
+      state.tickets = filterTickets.sort((previous, next) =>
+        getTotalFlyDuration(previous) + previous.price > getTotalFlyDuration(next) + next.price ? 1 : -1
+      );
+    },
   },
 });
 
-export const { showMoreTicket, sortTicketByPrise, sortTicketByDuration } = ticketsSlice.actions;
+export const { showMoreTicket, sortTicketByPrise, sortTicketByDuration, sortTicketOptimal } = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
