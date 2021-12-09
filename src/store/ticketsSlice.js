@@ -1,8 +1,7 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, current } from '@reduxjs/toolkit';
 
 import getTotalFlyDuration from '../utilites/getTotlaFlyDuration';
-// eslint-disable-next-line no-unused-vars
-import getMeanValueOfArray from '../utilites/getMeanValueOfArray';
 
 const ticketsSlice = createSlice({
   name: 'tickets',
@@ -432,36 +431,29 @@ const ticketsSlice = createSlice({
     numShowTicket: 5,
   },
   reducers: {
-    // eslint-disable-next-line no-unused-vars
     addTicket(state) {
       // eslint-disable-next-line no-console
       console.log(state);
     },
-    // eslint-disable-next-line no-unused-vars
+
     showMoreTicket(state) {
-      // eslint-disable-next-line no-param-reassign
       state.numShowTicket += 5;
     },
-    // todo переименовать на ...Price
-    sortTicketByPrise(state) {
+
+    sortTicketByPrice(state) {
       const filterTickets = current(state.tickets).slice();
-      // eslint-disable-next-line no-param-reassign
+
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
-      // console.log(filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1)));
-      // eslint-disable-next-line no-param-reassign
-      // console.log(filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1)));
     },
 
     sortTicketByDuration(state) {
       const filterTickets = current(state.tickets).slice();
-      // eslint-disable-next-line no-param-reassign,array-callback-return,arrow-body-style
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
       );
     },
     sortTicketOptimal(state) {
       const filterTickets = current(state.tickets).slice();
-      // eslint-disable-next-line no-param-reassign
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) + previous.price > getTotalFlyDuration(next) + next.price ? 1 : -1
       );
@@ -469,6 +461,6 @@ const ticketsSlice = createSlice({
   },
 });
 
-export const { showMoreTicket, sortTicketByPrise, sortTicketByDuration, sortTicketOptimal } = ticketsSlice.actions;
+export const { showMoreTicket, sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
