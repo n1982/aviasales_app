@@ -4,20 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showMoreTicket } from '../../store/ticketsSlice';
 
 import Ticket from '../Ticket';
-
+import filterTucketByTransfer from '../../utilites/filterTucketByTransfer';
 import uniqueKey from '../../utilites/uniqueKey';
+
 import './TicketList.scss';
-import getNumOfStop from '../../utilites/getNumOfStop';
 
 const TicketList = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
   const numShowTicket = useSelector((state) => state.tickets.numShowTicket);
+  const showAllTickets = useSelector((state) => state.tickets.showAllTickets);
+  const valueFilterTransfer = useSelector((state) => state.tickets.valueFilterTransfer);
   const dispatch = useDispatch();
 
   return (
     <div className="ticket-list">
       {tickets
-        .filter((item) => getNumOfStop(item) < 10)
+        .filter((item) => filterTucketByTransfer(item, showAllTickets, valueFilterTransfer))
         .slice(0, numShowTicket)
         .map((ticket) => (
           <Ticket key={uniqueKey()} {...ticket} />

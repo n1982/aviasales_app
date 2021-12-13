@@ -428,6 +428,12 @@ const ticketsSlice = createSlice({
         ],
       },
     ],
+    valueFilterTransfer: [0],
+    showAllTickets: false,
+    showOneTransferTicket: false,
+    showTwoTransferTicket: false,
+    showThreeTransferTicket: false,
+    showFourTransferTicket: false,
     numShowTicket: 5,
   },
   reducers: {
@@ -461,6 +467,7 @@ const ticketsSlice = createSlice({
   },
 });
 
-export const { showMoreTicket, sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } = ticketsSlice.actions;
+export const { showMoreTicket, sortTicketByPrice, sortTicketByDuration, sortTicketOptimal, filterNumberTransfer } =
+  ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
