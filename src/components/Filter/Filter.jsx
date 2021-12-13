@@ -1,26 +1,35 @@
 import React from 'react';
 
-import './Filter.scss';
+import styles from './Filter.module.scss';
 
 const Filter = () => (
-  <div className="filter-ticket">
-    <div className="filter-ticket__title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
-    <div className="checkbox">
-      <input type="checkbox" name="direct flight" />
-      <label htmlFor="direct flight">Без пересадок</label>
-    </div>
-    <div className="checkbox">
-      <input type="checkbox" name="direct flight" />
-      <label htmlFor="direct flight">1 пересадка</label>
-    </div>
-    <div className="checkbox">
-      <input type="checkbox" name="direct flight" />
-      <label htmlFor="direct flight">2 пересадки</label>
-    </div>
-    <div className="checkbox">
-      <input type="checkbox" name="direct flight" />
-      <label htmlFor="direct flight">3 пересадки</label>
-    </div>
+  <div className={styles.filter}>
+    <div className={styles.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
+
+    <input type="checkbox" id="all" className={styles.checkbox} />
+    <label className={styles.label} htmlFor="all">
+      Все
+    </label>
+
+    <input type="checkbox" id="0 direct" className={styles.checkbox} />
+    <label className={styles.label} htmlFor="0 direct">
+      Без пересадок
+    </label>
+
+    <input type="checkbox" id="1 direct" className={styles.checkbox} />
+    <label className={styles.label} htmlFor="1 direct">
+      1 пересадка
+    </label>
+
+    <input type="checkbox" id="2 direct" className={styles.checkbox} />
+    <label className={styles.label} htmlFor="2 direct">
+      2 пересадки
+    </label>
+
+    <input type="checkbox" id="3 direct" className={styles.checkbox} />
+    <label className={styles.label} htmlFor="3 direct">
+      3 пересадки
+    </label>
   </div>
 );
 export default Filter;

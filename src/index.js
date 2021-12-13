@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './components/App';
 
-import './normalize.css';
 import './index.scss';
 import './_variable.scss';
 
