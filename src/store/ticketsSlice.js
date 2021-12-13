@@ -442,7 +442,6 @@ const ticketsSlice = createSlice({
 
     sortTicketByPrice(state) {
       const filterTickets = current(state.tickets).slice();
-
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
     },
 
@@ -452,6 +451,7 @@ const ticketsSlice = createSlice({
         getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
       );
     },
+
     sortTicketOptimal(state) {
       const filterTickets = current(state.tickets).slice();
       state.tickets = filterTickets.sort((previous, next) =>
