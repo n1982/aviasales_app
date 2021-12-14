@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { setValueFilterTicket, switchFilterAll } from '../../store/ticketsSlice';
 
 import styles from './Filter.module.scss';
 
@@ -8,28 +11,41 @@ const Filter = () => {
   const [checkedOne, setCheckedOne] = useState(false);
   const [checkedTwo, setCheckedTwo] = useState(false);
   const [checkedThree, setCheckedThree] = useState(false);
+  const [isMount, setIsMount] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (checkedZero && checkedOne && checkedTwo && checkedThree) {
+    if (!isMount) {
+      setIsMount(true);
+    } else if (checkedZero && checkedOne && checkedTwo && checkedThree) {
       setCheckedAllTicket(true);
     } else {
       setCheckedAllTicket(false);
     }
-  }, [checkedZero, checkedOne, checkedTwo, checkedThree]);
+  }, [isMount, checkedZero, checkedOne, checkedTwo, checkedThree]);
+
+  useEffect(() => {
+    dispatch(switchFilterAll(checkedAllTicket));
+  }, [dispatch, checkedAllTicket]);
 
   const handleCheckboxChange = (event) => {
     switch (event.target.name) {
       case 'Zero':
         setCheckedZero(event.target.checked);
+        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 0 }));
         break;
       case 'One':
         setCheckedOne(event.target.checked);
+        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 1 }));
         break;
       case 'Two':
         setCheckedTwo(event.target.checked);
+        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 2 }));
         break;
       case 'Three':
         setCheckedThree(event.target.checked);
+        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 3 }));
         break;
       default:
         setCheckedAllTicket(event.target.checked);

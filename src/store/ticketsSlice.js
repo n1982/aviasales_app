@@ -428,7 +428,7 @@ const ticketsSlice = createSlice({
         ],
       },
     ],
-    valueFilterTransfer: [0],
+    valueFilterTransfer: [],
     showAllTickets: true,
     showOneTransferTicket: false,
     showTwoTransferTicket: false,
@@ -464,10 +464,28 @@ const ticketsSlice = createSlice({
         getTotalFlyDuration(previous) + previous.price > getTotalFlyDuration(next) + next.price ? 1 : -1
       );
     },
+
+    switchFilterAll(state, action) {
+      state.showAllTickets = action.payload;
+    },
+
+    setValueFilterTicket(state, action) {
+      if (action.payload.isChecked) {
+        state.valueFilterTransfer.push(action.payload.filterValue);
+      } else {
+        state.valueFilterTransfer = state.valueFilterTransfer.filter((item) => item !== action.payload.filterValue);
+      }
+    },
   },
 });
 
-export const { showMoreTicket, sortTicketByPrice, sortTicketByDuration, sortTicketOptimal, filterNumberTransfer } =
-  ticketsSlice.actions;
+export const {
+  showMoreTicket,
+  sortTicketByPrice,
+  sortTicketByDuration,
+  sortTicketOptimal,
+  setValueFilterTicket,
+  switchFilterAll,
+} = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;

@@ -1,7 +1,7 @@
 import getNumOfStop from './getNumOfStop';
 
-const filterTicketByTransfer = (ticket, showAllTicket, valueFilterTransfer) => {
-  if (!showAllTicket) {
+const filterTicketByTransfer = (ticket, showAllTickets, valueFilterTransfer) => {
+  if (!showAllTickets) {
     return valueFilterTransfer.includes(getNumOfStop(ticket));
   }
   return true;
