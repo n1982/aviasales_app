@@ -430,10 +430,6 @@ const ticketsSlice = createSlice({
     ],
     valueFilterTransfer: [],
     showAllTickets: true,
-    showOneTransferTicket: false,
-    showTwoTransferTicket: false,
-    showThreeTransferTicket: false,
-    showFourTransferTicket: false,
     numShowTicket: 5,
   },
   reducers: {
@@ -446,13 +442,16 @@ const ticketsSlice = createSlice({
       state.numShowTicket += 5;
     },
 
-    sortTicketByPrice(state) {
-      const filterTickets = current(state.tickets).slice();
+    sortTicketByPrice(state, getState) {
+      // const filterTickets = current(state.tickets).slice();
+      const filterTickets = getState().state.tickets;
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
     },
 
     sortTicketByDuration(state) {
+      // снимок массива билетов
       const filterTickets = current(state.tickets).slice();
+      // сортировка и запись обратно в стейт
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
       );

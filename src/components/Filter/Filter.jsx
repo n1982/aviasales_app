@@ -23,32 +23,52 @@ const Filter = () => {
     } else {
       setCheckedAllTicket(false);
     }
-  }, [isMount, checkedZero, checkedOne, checkedTwo, checkedThree]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkedZero, checkedOne, checkedTwo, checkedThree]);
 
   useEffect(() => {
     dispatch(switchFilterAll(checkedAllTicket));
   }, [dispatch, checkedAllTicket]);
 
+  useEffect(() => {
+    dispatch(setValueFilterTicket({ isChecked: checkedZero, filterValue: 0 }));
+  }, [checkedZero, dispatch]);
+
+  useEffect(() => {
+    dispatch(setValueFilterTicket({ isChecked: checkedOne, filterValue: 1 }));
+  }, [checkedOne, dispatch]);
+
+  useEffect(() => {
+    dispatch(setValueFilterTicket({ isChecked: checkedTwo, filterValue: 2 }));
+  }, [checkedTwo, dispatch]);
+
+  useEffect(() => {
+    dispatch(setValueFilterTicket({ isChecked: checkedThree, filterValue: 3 }));
+  }, [checkedThree, dispatch]);
+
   const handleCheckboxChange = (event) => {
     switch (event.target.name) {
       case 'Zero':
         setCheckedZero(event.target.checked);
-        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 0 }));
         break;
       case 'One':
         setCheckedOne(event.target.checked);
-        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 1 }));
+        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 1 }));
         break;
       case 'Two':
         setCheckedTwo(event.target.checked);
-        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 2 }));
+        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 2 }));
         break;
       case 'Three':
         setCheckedThree(event.target.checked);
-        dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 3 }));
+        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 3 }));
         break;
       default:
         setCheckedAllTicket(event.target.checked);
+        setCheckedZero(event.target.checked);
+        setCheckedOne(event.target.checked);
+        setCheckedTwo(event.target.checked);
+        setCheckedThree(event.target.checked);
     }
   };
 
