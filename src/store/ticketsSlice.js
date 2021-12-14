@@ -428,6 +428,8 @@ const ticketsSlice = createSlice({
         ],
       },
     ],
+    valueFilterTransfer: [],
+    showAllTickets: true,
     numShowTicket: 5,
   },
   reducers: {
@@ -442,25 +444,46 @@ const ticketsSlice = createSlice({
 
     sortTicketByPrice(state) {
       const filterTickets = current(state.tickets).slice();
-
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
     },
 
     sortTicketByDuration(state) {
+      // снимок массива билетов
       const filterTickets = current(state.tickets).slice();
+      // сортировка и запись обратно в стейт
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) > getTotalFlyDuration(next) ? 1 : -1
       );
     },
+
     sortTicketOptimal(state) {
       const filterTickets = current(state.tickets).slice();
       state.tickets = filterTickets.sort((previous, next) =>
         getTotalFlyDuration(previous) + previous.price > getTotalFlyDuration(next) + next.price ? 1 : -1
       );
     },
+
+    switchFilterAll(state, action) {
+      state.showAllTickets = action.payload;
+    },
+
+    setValueFilterTicket(state, action) {
+      if (action.payload.isChecked) {
+        state.valueFilterTransfer.push(action.payload.filterValue);
+      } else {
+        state.valueFilterTransfer = state.valueFilterTransfer.filter((item) => item !== action.payload.filterValue);
+      }
+    },
   },
 });
 
-export const { showMoreTicket, sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } = ticketsSlice.actions;
+export const {
+  showMoreTicket,
+  sortTicketByPrice,
+  sortTicketByDuration,
+  sortTicketOptimal,
+  setValueFilterTicket,
+  switchFilterAll,
+} = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;
