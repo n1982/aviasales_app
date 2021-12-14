@@ -442,9 +442,8 @@ const ticketsSlice = createSlice({
       state.numShowTicket += 5;
     },
 
-    sortTicketByPrice(state, getState) {
-      // const filterTickets = current(state.tickets).slice();
-      const filterTickets = getState().state.tickets;
+    sortTicketByPrice(state) {
+      const filterTickets = current(state.tickets).slice();
       state.tickets = filterTickets.sort((previous, next) => (previous.price > next.price ? 1 : -1));
     },
 
