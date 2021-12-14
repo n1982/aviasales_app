@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showMoreTicket } from '../../store/ticketsSlice';
 
 import Ticket from '../Ticket';
-import filterTucketByTransfer from '../../utilites/filterTucketByTransfer';
+import filterTicketByTransfer from '../../utilites/filterTicketByTransfer';
 import uniqueKey from '../../utilites/uniqueKey';
 
 import './TicketList.scss';
@@ -19,7 +19,7 @@ const TicketList = () => {
   return (
     <div className="ticket-list">
       {tickets
-        .filter((item) => filterTucketByTransfer(item, showAllTickets, valueFilterTransfer))
+        .filter((item) => filterTicketByTransfer(item, showAllTickets, valueFilterTransfer))
         .slice(0, numShowTicket)
         .map((ticket) => (
           <Ticket key={uniqueKey()} {...ticket} />

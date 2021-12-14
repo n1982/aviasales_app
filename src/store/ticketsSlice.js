@@ -429,7 +429,7 @@ const ticketsSlice = createSlice({
       },
     ],
     valueFilterTransfer: [0],
-    showAllTickets: false,
+    showAllTickets: true,
     showOneTransferTicket: false,
     showTwoTransferTicket: false,
     showThreeTransferTicket: false,
