@@ -111,6 +111,7 @@ const ticketsSlice = createSlice({
       if (action.payload === '500') {
         state.fetchStatus500 += 1;
       } else {
+        state.isLoading = false;
         state.error = true;
       }
     },
