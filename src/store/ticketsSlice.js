@@ -40,7 +40,7 @@ const ticketsSlice = createSlice({
     showAllTickets: true,
     numShowTicket: 5,
     isLoading: false,
-    error: null,
+    error: false,
     searchId: false,
     stopFetch: false,
     fetchStatus500: 0,
