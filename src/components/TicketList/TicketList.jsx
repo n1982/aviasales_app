@@ -8,7 +8,7 @@ import Ticket from '../Ticket';
 import filterTicketByTransfer from '../../utilites/filterTicketByTransfer';
 import uniqueKey from '../../utilites/uniqueKey';
 
-import './TicketList.scss';
+import styles from './TicketList.module.scss';
 
 const TicketList = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
@@ -18,14 +18,14 @@ const TicketList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="ticket-list">
+    <div className={styles.ticket_list}>
       {tickets
         .filter((item) => filterTicketByTransfer(item, showAllTickets, valueFilterTransfer))
         .slice(0, numShowTicket)
         .map((ticket) => (
           <Ticket key={uniqueKey()} {...ticket} />
         ))}
-      <button type="button" className="ticket-list__button" onClick={() => dispatch(showMoreTicket())}>
+      <button type="button" className={styles.button} onClick={() => dispatch(showMoreTicket())}>
         ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
       </button>
     </div>

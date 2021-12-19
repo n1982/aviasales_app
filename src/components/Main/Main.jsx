@@ -1,11 +1,12 @@
 import React from 'react';
 
-import './Main.scss';
 import TicketList from '../TicketList';
 import SortingTab from '../SortingTab';
 
+import styles from './Main.module.scss';
+
 const Main = () => (
-  <div className="main">
+  <div className={styles.main}>
     <SortingTab />
     <TicketList />
   </div>

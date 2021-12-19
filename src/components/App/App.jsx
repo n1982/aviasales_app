@@ -3,13 +3,14 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { fetchSearchId, fetchTickets } from '../../store/ticketsSlice';
+
 import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Main from '../Main';
 
-import { fetchSearchId, fetchTickets } from '../../store/ticketsSlice';
-import './App.scss';
+import Main from '../Main';
 import deleteCookie from '../../utilites/deleteCokie';
+import styles from './App.module.scss';
 
 const App = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
@@ -28,7 +29,7 @@ const App = () => {
   }, [dispatch, tickets, fetchStatus500, stopFetch, searchId]);
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
       <Sidebar />
       <Main />

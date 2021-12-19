@@ -2,11 +2,11 @@ import React from 'react';
 
 import logo from '../../assets/img/Logo.png';
 
-import './Header.scss';
+import styles from './Header.module.scss';
 
 const Header = () => (
-  <div className="header">
-    <img className="header__logo" alt="logo" src={logo} />
+  <div className={styles.header}>
+    <img className={styles.logo} alt="logo" src={logo} />
   </div>
 );
 

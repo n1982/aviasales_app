@@ -1,10 +1,10 @@
 import React from 'react';
 import Filter from '../Filter';
 
-import './Sidebar.scss';
+import styles from './Sidebar.module.scss';
 
 const Sidebar = () => (
-  <div className="sidebar">
+  <div className={styles.sidebar}>
     <Filter />
   </div>
 );

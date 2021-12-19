@@ -3,10 +3,13 @@
 //noinspection CssInvalidAtRule
 @import-normalize;
 
+@import '_variable.scss';
+
 body {
+
   background: #E5E5E5;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
-}
+  }
 
 
