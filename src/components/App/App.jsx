@@ -1,6 +1,5 @@
 /* eslint-disable arrow-body-style */
 import React, { useEffect } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchSearchId, fetchTickets } from '../../store/ticketsSlice';
@@ -22,6 +21,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchSearchId());
+
     return deleteCookie('searchId');
   }, [dispatch]);
   useEffect(() => {

@@ -39,7 +39,7 @@ const ticketsSlice = createSlice({
     valueFilterTransfer: [],
     showAllTickets: true,
     numShowTicket: 5,
-    isLoading: null,
+    isLoading: false,
     error: null,
     searchId: false,
     stopFetch: false,
