@@ -2,12 +2,13 @@
 
 .ticket {
   display: grid;
-  gap: 10px;
+  gap: 7px;
   background-color: white;
   max-width: 500px;
   padding: 20px;
   margin-bottom: 10px;
   border-radius: $card-br-radius;
+  box-shadow: $obj-shadow;
 }
 
 .price_logo {

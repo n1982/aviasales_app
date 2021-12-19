@@ -1,7 +1,10 @@
+@import "../../variable";
+
 .tabs {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: 50px;
+  box-shadow: $obj-shadow;
 }
 
 .tab {
@@ -26,5 +29,11 @@
   border-color: #2196F3;
   color: white;
 
+}
+
+.select {
+  background: #2196F3;
+  border-color: #2196F3;
+  color: white;
 }
 

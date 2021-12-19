@@ -1,5 +1,10 @@
 @import "../../variable";
 
+.ticket_list{
+  display: grid;
+  gap: 15px;
+}
+
 .button {
   background-color: $blue-background;
   border: none;

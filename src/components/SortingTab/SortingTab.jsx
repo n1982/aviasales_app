@@ -1,21 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import classNames from 'classnames/bind';
 import styles from './SortingTab.module.scss';
 
 import { sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } from '../../store/ticketsSlice';
 
 const SortingTab = () => {
+  const [cheapSelect, setCheapSelect] = useState(false);
+  const [fastSelect, setFastSelect] = useState(false);
+  const [optimalSelect, setOptimalSelect] = useState(false);
+
   const dispatch = useDispatch();
+
+  const cx = classNames.bind(styles);
+
   return (
     <div className={styles.tabs}>
-      <div role="presentation" className={styles.tab} onClick={() => dispatch(sortTicketByPrice())}>
+      <div
+        role="presentation"
+        className={cx({
+          tab: true,
+          select: cheapSelect,
+        })}
+        onClick={() => {
+          dispatch(sortTicketByPrice());
+          setCheapSelect(true);
+          setFastSelect(false);
+          setOptimalSelect(false);
+        }}
+      >
         <span>САМЫЙ ДЕШЕВЫЙ</span>
       </div>
-      <div role="presentation" className={styles.tab} onClick={() => dispatch(sortTicketByDuration())}>
+      <div
+        role="presentation"
+        className={cx({
+          tab: true,
+          select: fastSelect,
+        })}
+        onClick={() => {
+          dispatch(sortTicketByDuration());
+          setCheapSelect(false);
+          setFastSelect(true);
+          setOptimalSelect(false);
+        }}
+      >
         <span>САМЫЙ БЫСТРЫЙ</span>
       </div>
-      <div role="presentation" className={styles.tab} onClick={() => dispatch(sortTicketOptimal())}>
+      <div
+        role="presentation"
+        className={cx({
+          tab: true,
+          select: optimalSelect,
+        })}
+        onClick={() => {
+          dispatch(sortTicketOptimal());
+          setCheapSelect(false);
+          setFastSelect(false);
+          setOptimalSelect(true);
+        }}
+      >
         <span>ОПТИМАЛЬНЫЙ</span>
       </div>
     </div>
