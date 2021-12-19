@@ -39,8 +39,8 @@ const ticketsSlice = createSlice({
     valueFilterTransfer: [],
     showAllTickets: true,
     numShowTicket: 5,
-    isLoading: null,
-    error: null,
+    isLoading: false,
+    error: false,
     searchId: false,
     stopFetch: false,
     fetchStatus500: 0,
@@ -111,6 +111,7 @@ const ticketsSlice = createSlice({
       if (action.payload === '500') {
         state.fetchStatus500 += 1;
       } else {
+        state.isLoading = false;
         state.error = true;
       }
     },

@@ -1,34 +1,39 @@
+@import "./src/variable";
+
 .ticket {
   display: grid;
-  gap: 10px;
+  gap: 7px;
   background-color: white;
   max-width: 500px;
   padding: 20px;
   margin-bottom: 10px;
+  border-radius: $card-br-radius;
+  box-shadow: $obj-shadow;
 }
 
-.ticket__price-logo {
+.price_logo {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
 }
 
-.ticket__price {
+.price {
   margin-top: auto;
   margin-bottom: auto;
   font-size: 25px;
   color: #2196F3;
 }
 
-.header__logo {
+.logo {
   margin-left: auto;
 }
 
-.ticket__information {
+.information {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.gray-text {
+.gray_text {
   color: #A0B0B9;
+  margin-bottom: 5px;
 }

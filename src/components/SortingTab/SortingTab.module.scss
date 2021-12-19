@@ -1,10 +1,13 @@
-.tabs-sorting {
+@import "../../variable";
+
+.tabs {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: 50px;
+  box-shadow: $obj-shadow;
 }
 
-.tabs-sorting__tab {
+.tab {
   display: flex;
   border: 1px solid #DFE5EC;
   justify-content: center;
@@ -12,19 +15,25 @@
   background-color: white;
 }
 
-.tabs-sorting__tab:first-child {
-  border-radius: 10px 0 0 10px;
+.tab:first-child {
+  border-radius: 3px 0 0 3px;
 }
 
-.tabs-sorting__tab:last-child {
-  border-radius: 0 10px 10px 0;
+.tab:last-child {
+  border-radius: 0 3px 3px 0;
 }
 
-.tabs-sorting__tab:hover {
+.tab:hover {
   cursor: pointer;
   background: #2196F3;
   border-color: #2196F3;
   color: white;
 
+}
+
+.select {
+  background: #2196F3;
+  border-color: #2196F3;
+  color: white;
 }
 

@@ -7,23 +7,19 @@ import styles from './Filter.module.scss';
 
 const Filter = () => {
   const [checkedAllTicket, setCheckedAllTicket] = useState(true);
-  const [checkedZero, setCheckedZero] = useState(false);
-  const [checkedOne, setCheckedOne] = useState(false);
-  const [checkedTwo, setCheckedTwo] = useState(false);
-  const [checkedThree, setCheckedThree] = useState(false);
-  const [isMount, setIsMount] = useState(false);
+  const [checkedZero, setCheckedZero] = useState(true);
+  const [checkedOne, setCheckedOne] = useState(true);
+  const [checkedTwo, setCheckedTwo] = useState(true);
+  const [checkedThree, setCheckedThree] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!isMount) {
-      setIsMount(true);
-    } else if (checkedZero && checkedOne && checkedTwo && checkedThree) {
+    if (checkedZero && checkedOne && checkedTwo && checkedThree) {
       setCheckedAllTicket(true);
     } else {
       setCheckedAllTicket(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkedZero, checkedOne, checkedTwo, checkedThree]);
 
   useEffect(() => {
@@ -53,15 +49,15 @@ const Filter = () => {
         break;
       case 'One':
         setCheckedOne(event.target.checked);
-        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 1 }));
+
         break;
       case 'Two':
         setCheckedTwo(event.target.checked);
-        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 2 }));
+
         break;
       case 'Three':
         setCheckedThree(event.target.checked);
-        // dispatch(setValueFilterTicket({ isChecked: event.target.checked, filterValue: 3 }));
+
         break;
       default:
         setCheckedAllTicket(event.target.checked);
