@@ -3,8 +3,9 @@
 .tabs {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: 50px;
+  //grid-template-rows: 50px;
   box-shadow: $obj-shadow;
+  margin: 0 5px 0 0;
 }
 
 .tab {
