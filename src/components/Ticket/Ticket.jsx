@@ -7,10 +7,11 @@ import { getArrivalTime, getDepartureTime, getTravelTime } from '../../utilites/
 import styles from './Ticket.module.scss';
 
 const Ticket = ({ price, carrier, segments }) => {
+  const priceStr = String(price).replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
   return (
     <div className={styles.ticket}>
       <div className={styles.price_logo}>
-        <div className={styles.price}> {`${price} \u20bd`} </div>
+        <div className={styles.price}> {`${priceStr} \u20bd`} </div>
         <img className={styles.logo} alt="logo" src={`//pics.avs.io/99/36/${carrier}.png`} />
       </div>
       {segments.map((item) => (

@@ -6,7 +6,6 @@
   background-color: white;
   max-width: 500px;
   padding: 20px;
-  //margin-bottom: 10px;
   border-radius: $card-br-radius;
   box-shadow: $obj-shadow;
 }
@@ -20,12 +19,14 @@
 .price_logo {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
+  margin-bottom: 8px;
 }
 
 .price {
   margin-top: auto;
   margin-bottom: auto;
-  font-size: calc(13px + 12 * (100vw/960));;
+  font-size: 22px;
+  font-weight: bold;
   color: #2196F3;
 }
 
