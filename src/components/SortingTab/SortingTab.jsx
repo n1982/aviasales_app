@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import classNames from 'classnames/bind';
-import styles from './SortingTab.module.scss';
 
 import { sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } from '../../store/ticketsSlice';
+
+import styles from './SortingTab.module.scss';
 
 const SortingTab = () => {
   const [cheapSelect, setCheapSelect] = useState(false);

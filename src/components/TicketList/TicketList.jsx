@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showMoreTicket } from '../../store/ticketsSlice';
 
 import Ticket from '../Ticket';
+import WarningMsg from '../WarningMsg';
 
 import filterTicketByTransfer from '../../utilites/filterTicketByTransfer';
 import uniqueKey from '../../utilites/uniqueKey';
 
 import styles from './TicketList.module.scss';
-import WarningMsg from '../WarningMsg';
 
 const TicketList = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
@@ -28,9 +28,7 @@ const TicketList = () => {
       {ticketsFilter.slice(0, numShowTicket).map((ticket) => (
         <Ticket key={uniqueKey()} {...ticket} />
       ))}
-
       {ticketsFilter.length === 0 && !error && !isLoading && <WarningMsg />}
-
       {ticketsFilter.length > numShowTicket && (
         <button type="button" className={styles.button} onClick={() => dispatch(showMoreTicket())}>
           ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!

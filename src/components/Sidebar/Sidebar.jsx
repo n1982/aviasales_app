@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Filter from '../Filter';
 
 import styles from './Sidebar.module.scss';

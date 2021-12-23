@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import TicketList from '../TicketList';
 import SortingTab from '../SortingTab';
 import ErrorMsg from '../Error';
-
 import Spinner from '../Spinner';
+
 import styles from './Main.module.scss';
 
 const Main = () => {

@@ -1,5 +1,5 @@
 .loader {
-  overflow:hidden;
+  overflow: hidden;
   font-size: 8px;
   margin: 20px auto;
   text-indent: -9999em;
@@ -7,11 +7,11 @@
   height: 3em;
   border-radius: 50%;
   background: #65abf8;
-  background: -moz-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-  background: -webkit-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-  background: -o-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-  background: -ms-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-  background: linear-gradient(to right, #65abf8 10%, rgba(101,171,248, 0) 42%);
+  background: -moz-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -webkit-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -o-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: -ms-linear-gradient(left, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
+  background: linear-gradient(to right, #65abf8 10%, rgba(101, 171, 248, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -19,6 +19,7 @@
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
+
 .loader:before {
   width: 50%;
   height: 50%;
@@ -29,6 +30,7 @@
   left: 0;
   content: '';
 }
+
 .loader:after {
   background: white;
   width: 75%;
@@ -42,6 +44,7 @@
   bottom: 0;
   right: 0;
 }
+
 @-webkit-keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -52,6 +55,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);

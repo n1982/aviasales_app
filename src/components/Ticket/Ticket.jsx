@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types,spaced-comment,arrow-body-style */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import enumeration from '../../utilites/enumeration';
 import { getArrivalTime, getDepartureTime, getTravelTime } from '../../utilites/dateUtility';
@@ -35,3 +35,14 @@ const Ticket = ({ price, carrier, segments }) => {
 };
 
 export default Ticket;
+
+Ticket.defaultProps = {
+  price: 0,
+  carrier: '',
+  segments: [],
+};
+Ticket.propTypes = {
+  price: PropTypes.number,
+  carrier: PropTypes.string,
+  segments: PropTypes.instanceOf(Array),
+};

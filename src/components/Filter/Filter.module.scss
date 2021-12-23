@@ -10,8 +10,8 @@
   box-shadow: $obj-shadow;
 }
 
-.filter:last-child{
-padding-bottom: 15px;
+.filter:last-child {
+  padding-bottom: 15px;
 }
 
 .title {
@@ -22,7 +22,7 @@ padding-bottom: 15px;
 @media (min-width: 1024px) {
   .title {
     margin: 20px 10px 20px 20px;
-    }
+  }
 }
 
 
@@ -31,16 +31,17 @@ padding-bottom: 15px;
 }
 
 
-.wrapper{
+.wrapper {
   padding: 1vh 1vw 1vh 3vw;
 }
 
 @media (min-width: 1024px) {
-  .wrapper{
+  .wrapper {
     padding: 10px 10px 10px 20px;
   }
 
 }
+
 .wrapper:hover {
   background-color: #F1FCFF;
 }
@@ -52,13 +53,12 @@ padding-bottom: 15px;
 }
 
 
-
 label:before {
   content: "";
-  font-family:  FontAwesome;
-  font-size: calc(6px + 5 * (100vw/960));
-  width: calc((5vw )/2);
-  height: calc((5vw )/2);
+  font-family: FontAwesome;
+  font-size: calc(6px + 5 * (100vw / 960));
+  width: calc((5vw) / 2);
+  height: calc((5vw) / 2);
   max-width: 20px;
   max-height: 20px;
   min-width: 10px;
@@ -71,7 +71,7 @@ label:before {
   justify-content: center;
 }
 
-@media (max-width: 425px){
+@media (max-width: 425px) {
   label:before {
     width: 10px;
     height: 10px;
