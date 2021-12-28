@@ -1,12 +1,10 @@
 /* eslint-disable no-param-reassign */
-// noinspection JSAnnotator
 
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 
 import getTotalFlyDuration from '../utilites/getTotlaFlyDuration';
 import getCookie from '../utilites/getCookie';
 
-// eslint-disable-next-line id-length
 export const fetchSearchId = createAsyncThunk('tickets/fetchSearchId', async (_, { rejectWithValue }) => {
   try {
     const res = await fetch(' https://front-test.beta.aviasales.ru/search');
@@ -19,7 +17,6 @@ export const fetchSearchId = createAsyncThunk('tickets/fetchSearchId', async (_,
   }
 });
 
-// eslint-disable-next-line id-length
 export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, { rejectWithValue }) => {
   try {
     const res = await fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${getCookie('searchId')}`);
