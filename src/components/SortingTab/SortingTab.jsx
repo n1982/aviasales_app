@@ -8,11 +8,11 @@ import { sortTicketByPrice, sortTicketByDuration, sortTicketOptimal } from '../.
 import styles from './SortingTab.module.scss';
 
 const SortingTab = () => {
+  const dispatch = useDispatch();
   const [cheapSelect, setCheapSelect] = useState(false);
   const [fastSelect, setFastSelect] = useState(false);
-  const [optimalSelect, setOptimalSelect] = useState(false);
 
-  const dispatch = useDispatch();
+  const [optimalSelect, setOptimalSelect] = useState(false);
 
   const cx = classNames.bind(styles);
 
