@@ -7,7 +7,7 @@ import getCookie from '../utilites/getCookie';
 
 export const fetchSearchId = createAsyncThunk('tickets/fetchSearchId', async (_, { rejectWithValue }) => {
   try {
-    const res = await fetch(' https://front-test.beta.aviasales.ru/search');
+    const res = await fetch('https://aviasales-test-api.kata.academy/search');
     if (!res.ok) {
       throw new Error(`${res.status}`);
     }
@@ -19,7 +19,7 @@ export const fetchSearchId = createAsyncThunk('tickets/fetchSearchId', async (_,
 
 export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, { rejectWithValue }) => {
   try {
-    const res = await fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${getCookie('searchId')}`);
+    const res = await fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${getCookie('searchId')}`);
     if (!res.ok) {
       throw new Error(`${res.status}`);
     }
