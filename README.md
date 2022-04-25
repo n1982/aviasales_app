@@ -1,7 +1,7 @@
 # Aviasales App
 
-
-В данном курсе мы реализуем тестовое задание от Aviasales на связке react + redux
+### deploy
+https://aviasales-app-n1982.vercel.app/
 
 Это страница выдачи билетов со множеством фильтров, настроек и собственно билетов. 
 Проект написан на React, поэтому тестовое задание приближено к ежедневным задачам.
@@ -16,7 +16,6 @@ https://github.com/KosyanMedia/test-tasks/blob/master/aviasales_frontend/server.
 
 ## Redux
 
-Установите пакеты для redux, настройте работу redux
 Реализуйте хранение состояния сортировки в сторе редакса
 Реализуйте хранения состояния чекбоксов в сторе редакса
 Реализуйте функционал включения/выключения фильтров, описанный ниже
@@ -30,7 +29,7 @@ https://github.com/KosyanMedia/test-tasks/blob/master/aviasales_frontend/server.
 
 ##  Получение данных
 
-В случае проблем с оригинальным апи - можете использовать наш аналог https://aviasales-test-api.java-mentor.com/search
+В случае проблем с оригинальным апи -  https://aviasales-test-api.java-mentor.com/search
 
 Установите redux-thunk и добавьте в приложение
 Настройке работу Redux DevTools
@@ -53,5 +52,3 @@ https://github.com/KosyanMedia/test-tasks/blob/master/aviasales_frontend/server.
 Если по результатам фильтрации нет рейсов (например, ни одна галочка не выбрана) - должно быть сообщение "Рейсов, подходящих под заданные фильтры, не найдено"
 
 
-### deploy
-https://aviasales-app-n1982.vercel.app/
